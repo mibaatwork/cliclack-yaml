@@ -1,0 +1,29 @@
+# Progress bar installation flow
+- type: intro
+  text: " 🚀 Starting Installation "
+
+- type: progress
+  progressType:
+    type: bar
+    total: 100
+  startMessage: "Installing..."
+  stopMessage: "✅ Installation complete!"
+  items:
+    - message: "Creating directories..."
+      increment: 20
+      delayMs: 300
+    - message: "Copying files..."
+      increment: 30
+      delayMs: 500
+    - message: "Setting up configuration..."
+      increment: 25
+      delayMs: 400
+    - message: "Installing dependencies..."
+      increment: 20
+      delayMs: 600
+    - message: "Running post-install scripts..."
+      increment: 5
+      delayMs: 200
+
+- type: outro
+  text: "🎉 Installed successfully!"

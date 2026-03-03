@@ -1,0 +1,98 @@
+# Showcase: Every step type in one file
+#
+# This file demonstrates all 11 step types supported by cliclack_yaml.
+# It is meant as a reference — in practice you'd split these across
+# separate YAML files for different CLI flows.
+
+# 1. Clear the terminal
+- type: clearscreen
+
+# 2. Intro banner with styling
+- type: intro
+  text: " 🎯 cliclack_yaml Showcase "
+  style:
+    color: black
+    background: cyan
+
+# 3. Print an informational message
+- type: print
+  loglevel: info
+  text: "Welcome! This demo walks through every step type."
+
+# 3b. Print without loglevel — plain remark, no marker
+- type: print
+  text: "This line has no marker, just indented text."
+
+# 4. Text input
+- type: input
+  prompt: "What is your name?"
+  placeholder: "Jane Doe"
+  output: "user_name"
+
+# 5. Password input with masking
+- type: password
+  prompt: "Enter a secret"
+  output: "secret"
+  mask: "▪"
+
+# 6. Confirm prompt
+- type: confirm
+  prompt: "Continue with the demo?"
+  output: "should_continue"
+  default: true
+
+# 7. Select one option
+- type: select
+  prompt: "Pick a color"
+  output: "color"
+  items:
+    - value: "red"
+      label: "Red"
+    - value: "green"
+      label: "Green"
+    - value: "blue"
+      label: "Blue"
+      hint: "Recommended"
+
+# 8. Multi-select
+- type: multiselect
+  prompt: "Select toppings"
+  output: "toppings"
+  required: true
+  items:
+    - label: "Cheese"
+      value: "cheese"
+      is_selected: true
+    - label: "Mushrooms"
+      value: "mushrooms"
+    - label: "Peppers"
+      value: "peppers"
+
+# 9. Spinner (requires a registered run_fn handler)
+# - type: spinner
+#   start_text: "Processing..."
+#   stop_text: "Done!"
+#   run_fn: "my_function"
+#   output: "result"
+
+# 10. Progress bar
+- type: progress
+  progressType:
+    type: bar
+    total: 100
+  startMessage: "Working..."
+  stopMessage: "✅ Complete!"
+  items:
+    - message: "Step 1..."
+      increment: 50
+      delayMs: 500
+    - message: "Step 2..."
+      increment: 50
+      delayMs: 500
+
+# 11. Outro with variable interpolation
+- type: outro
+  text: " Thanks, {user_name}! You picked {color}. "
+  style:
+    color: black
+    background: green

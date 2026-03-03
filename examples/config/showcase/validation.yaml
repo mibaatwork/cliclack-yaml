@@ -1,0 +1,67 @@
+# Showcase: Input and password validation
+#
+# Input validate uses internally tagged enums with { type, message } objects.
+# Input types:   not-empty, must-start-with-letter, regex
+# Password types: not-empty, min-length
+
+- type: intro
+  text: " Validation Demo "
+  style:
+    color: black
+    background: cyan
+
+# not-empty — field cannot be blank
+- type: input
+  prompt: "Required field (cannot be empty)"
+  output: "required_field"
+  validate:
+    - type: not-empty
+      message: "This field is required"
+
+# must-start-with-letter — first character must be a letter
+- type: input
+  prompt: "Identifier (must start with a letter)"
+  output: "identifier"
+  validate:
+    - type: must-start-with-letter
+      message: "Must start with a letter"
+
+# regex — custom pattern
+- type: input
+  prompt: "Slug (lowercase, hyphens only)"
+  output: "slug"
+  placeholder: "my-project"
+  validate:
+    - type: not-empty
+      message: "Slug is required"
+    - type: regex
+      pattern: "^[a-z][a-z0-9-]*$"
+      message: "Must be lowercase letters, numbers, and hyphens only"
+
+# Password validation — not-empty + min-length
+- type: password
+  prompt: "Create a password (min 8 chars)"
+  output: "password"
+  validate:
+    - type: not-empty
+      message: "Password is required"
+    - type: min-length
+      length: 8
+      message: "Password must be at least 8 characters"
+
+# Password with confirmation
+- type: password
+  prompt: "Set master key"
+  output: "master_key"
+  mask: "*"
+  confirm_password: true
+  confirm_prompt: "Confirm master key"
+  validate:
+    - type: not-empty
+      message: "Master key is required"
+
+- type: outro
+  text: " All inputs validated ✅ "
+  style:
+    color: black
+    background: green

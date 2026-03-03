@@ -1,0 +1,16 @@
+# Status display — show pre-computed info via variable
+- type: intro
+  text: " 🔐 Authentication Status "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "{status_info}"
+
+- type: outro
+  text: " Status check complete "
+  style:
+    color: black
+    background: green

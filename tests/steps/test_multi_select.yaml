@@ -1,0 +1,30 @@
+- type: intro
+  text: "Multi-Select Test"
+
+- type: multiselect
+  prompt: "Select additional tools to install:"
+  output: "selected_tools"
+  required: true
+  items:
+    - value: "eslint"
+      label: "ESLint"
+      hint: "JavaScript linter (recommended)"
+    - value: "prettier"
+      label: "Prettier"
+      hint: "Code formatter"
+    - value: "jest"
+      label: "Jest"
+      hint: "Testing framework"
+    - value: "typescript"
+      label: "TypeScript"
+      hint: "Static typing for JavaScript"
+    - value: "webpack"
+      label: "Webpack"
+      hint: "Module bundler"
+
+- type: print
+  text: "You selected: {selected_tools}"
+  loglevel: "info"
+
+- type: outro
+  text: "Multi-select test complete"

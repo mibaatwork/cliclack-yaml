@@ -1,0 +1,10 @@
+# Simple test for conditional select output capture
+- type: select
+  prompt: "Choose an option"
+  output: "result"
+  items:
+    - value: "with_yaml"
+      label: "Option with YAML"
+      executeYaml: "simple_output_test"
+    - value: "without_yaml"
+      label: "Option without YAML"

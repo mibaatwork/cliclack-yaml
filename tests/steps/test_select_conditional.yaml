@@ -1,0 +1,30 @@
+# Conditional select example - main flow
+- type: intro
+  text: "🚀 Project Setup Wizard"
+
+- type: select
+  prompt: "What type of project would you like to create?"
+  output: "external_step_output"
+  items:
+    - value: "web"
+      label: "Web Application"
+      hint: "Create a modern web application"
+      executeYaml: "web_project_setup"
+    - value: "cli"
+      label: "CLI Tool"
+      hint: "Create a command-line interface tool"
+      executeYaml: "cli_project_setup"
+    - value: "api"
+      label: "REST API"
+      hint: "Create a RESTful API service"
+      executeYaml: "api_project_setup"
+    - value: "simple"
+      label: "Simple Project"
+      hint: "Just a basic project without setup"
+
+- type: print
+  text: "Final result: {external_step_output}"
+  loglevel: "info"
+
+- type: outro
+  text: "✅ Project setup completed!"

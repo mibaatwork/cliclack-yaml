@@ -1,0 +1,63 @@
+# Showcase: All text styling options
+#
+# Text styling is available on `intro` and `outro` steps.
+# Supported colors:  black, white, red, green, blue
+# Supported backgrounds: cyan, green, red, yellow
+
+# --- Color options ---
+
+- type: intro
+  text: " Black text on cyan "
+  style:
+    color: black
+    background: cyan
+
+- type: outro
+  text: " Done "
+  style:
+    color: black
+    background: cyan
+
+- type: intro
+  text: " White text on red "
+  style:
+    color: white
+    background: red
+
+- type: outro
+  text: " Done "
+  style:
+    color: white
+    background: red
+
+- type: intro
+  text: " Black text on green "
+  style:
+    color: black
+    background: green
+
+- type: outro
+  text: " Done "
+  style:
+    color: black
+    background: green
+
+- type: intro
+  text: " Black text on yellow "
+  style:
+    color: black
+    background: yellow
+
+- type: outro
+  text: " Done "
+  style:
+    color: black
+    background: yellow
+
+# --- Without styling (plain text) ---
+
+- type: intro
+  text: "Plain intro without styling"
+
+- type: outro
+  text: "Plain outro without styling"

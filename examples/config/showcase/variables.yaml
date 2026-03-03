@@ -1,0 +1,60 @@
+# Showcase: Variable interpolation
+#
+# Variables can be:
+# 1. Passed in from Rust code via render_prompt_interaction_with_vars()
+# 2. Collected from previous steps via the `output` field
+# 3. Referenced in text with {variable_name} syntax
+
+- type: intro
+  text: " Variable Demo "
+  style:
+    color: black
+    background: cyan
+
+# This uses a variable passed in from Rust code
+- type: print
+  loglevel: info
+  text: "Application: {app_name}"
+
+# This uses a variable passed in from Rust code
+- type: print
+  loglevel: info
+  text: "Version: {app_version}"
+
+# Collect a value from the user
+- type: input
+  prompt: "Enter your name"
+  output: "user_name"
+
+# Use the collected value in a message
+- type: print
+  loglevel: info
+  text: "Hello, {user_name}! Welcome to {app_name} v{app_version}."
+
+# Collect another value
+- type: select
+  prompt: "Choose environment"
+  output: "env"
+  items:
+    - value: "dev"
+      label: "Development"
+    - value: "staging"
+      label: "Staging"
+    - value: "prod"
+      label: "Production"
+
+# Combine multiple variables in the outro
+- type: outro
+  text: " {user_name} → {env} environment ready "
+  style:
+    color: black
+    background: green
+
+# Usage from Rust:
+# let results = cliclack_yaml::render_prompt_interaction_with_vars(
+#     "showcase/variables",
+#     vec![
+#         ("app_name", "My CLI"),
+#         ("app_version", "1.0.0"),
+#     ],
+# )?;

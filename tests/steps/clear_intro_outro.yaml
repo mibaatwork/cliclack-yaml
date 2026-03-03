@@ -1,0 +1,8 @@
+- step:
+  type: clearscreen
+- step:
+  type: intro
+  text: "Test Start"
+- step:
+  type: outro
+  text: "Test End\n"

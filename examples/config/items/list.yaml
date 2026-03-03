@@ -1,0 +1,16 @@
+# Display a list of items via variable
+- type: intro
+  text: " Items "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "{items_output}"
+
+- type: outro
+  text: " List complete "
+  style:
+    color: black
+    background: green

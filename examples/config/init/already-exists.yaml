@@ -1,0 +1,19 @@
+# Config already exists notification
+- type: clearscreen
+
+- type: intro
+  text: " Initialize "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  input: config_path
+  text: "Config path: {config_path}"
+
+- type: outro
+  text: " Config already exists "
+  style:
+    color: black
+    background: green

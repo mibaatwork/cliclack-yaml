@@ -1,0 +1,18 @@
+# System requirements check — display pre-computed output
+- type: clearscreen
+
+- type: intro
+  text: " System Requirements Check "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  text: "{check_output}"
+  loglevel: info
+
+- type: outro
+  text: " System checks complete "
+  style:
+    color: black
+    background: green

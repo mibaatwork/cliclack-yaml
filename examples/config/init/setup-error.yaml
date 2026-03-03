@@ -1,0 +1,20 @@
+# Error during initialization
+- type: intro
+  text: " Initialize "
+  style:
+    color: black
+    background: red
+
+- type: print
+  loglevel: error
+  text: "❌ Failed to initialize"
+
+- type: print
+  loglevel: error
+  text: "Error: {error_message}"
+
+- type: outro
+  text: " ❌ Initialization Failed "
+  style:
+    color: white
+    background: red

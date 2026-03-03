@@ -1,0 +1,12 @@
+
+- type: input
+  prompt: "Enter your name"
+  output: "name"
+  validate:
+    - type: not-empty
+      message: "Name cannot be empty"
+    - type: must-start-with-letter
+      message: "Name must start with a letter"
+    - type: regex
+      pattern: "^[A-Za-z][A-Za-z0-9_]*$"
+      message: "Name must contain only letters, numbers, and underscores"

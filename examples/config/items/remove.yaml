@@ -1,0 +1,31 @@
+# Destructive multi-select removal with confirmation
+- type: intro
+  text: " Remove Items "
+  style:
+    color: black
+    background: red
+
+- type: print
+  loglevel: warning
+  text: "Select items to remove"
+
+- type: multiselect
+  prompt: "Select items to remove"
+  items: "{item_list}"
+  output: "items_to_remove"
+  required: true
+
+- type: print
+  loglevel: warning
+  text: "⚠️  This will permanently remove the selected items."
+
+- type: confirm
+  prompt: "Are you sure you want to remove these items?"
+  output: "confirm_remove"
+  default: false
+
+- type: outro
+  text: " Items removed "
+  style:
+    color: black
+    background: green

@@ -1,0 +1,24 @@
+- type: print
+  text: "This is info message"
+  loglevel: "info"
+- type: print
+  text: "This is warning message"
+  loglevel: "warning"
+- type: print
+  text: "This is error message"
+  loglevel: "error"
+- type: print
+  text: "This is a default message with explicit info loglevel"
+  loglevel: "info"
+- type: print
+  text: "This is plain text without loglevel"
+- type: print
+  text: "Hello {name}!"
+  loglevel: "info"
+  input: "name"
+- type: print
+  text: "Plain output: {project}"
+  input: "project"
+- type: print
+  text: "Project: {project}, Version: {version}"
+  loglevel: "info"

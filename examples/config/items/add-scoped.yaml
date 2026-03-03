@@ -1,0 +1,51 @@
+# Create item scoped to a group — with group selector and confirmation
+- type: intro
+  text: " Add Item to Group "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Create an item and assign it to a group"
+
+- type: input
+  prompt: "Item name"
+  output: "item_name"
+
+- type: input
+  prompt: "Description (optional)"
+  output: "item_description"
+
+- type: select
+  prompt: "Select type"
+  items: "{type_items}"
+  output: "item_type"
+
+- type: select
+  prompt: "Select group"
+  items: "{group_items}"
+  output: "selected_group"
+
+- type: print
+  loglevel: info
+  text: "Item: {item_name}"
+
+- type: print
+  loglevel: info
+  text: "Type: {item_type}"
+
+- type: print
+  loglevel: info
+  text: "Group: {selected_group}"
+
+- type: confirm
+  prompt: "Create this item?"
+  output: "confirm_add"
+  default: true
+
+- type: outro
+  text: " Item added to group! "
+  style:
+    color: black
+    background: green

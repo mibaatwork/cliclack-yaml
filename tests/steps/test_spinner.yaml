@@ -1,0 +1,6 @@
+
+- type: spinner
+  start_text: "Processing..."
+  stop_text: "Done!"
+  run_fn: "wait_five_seconds"
+  output: "result"

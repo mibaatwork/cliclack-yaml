@@ -1,0 +1,4 @@
+
+- type: confirm
+  prompt: "Do you want to continue?"
+  output: "should_continue"

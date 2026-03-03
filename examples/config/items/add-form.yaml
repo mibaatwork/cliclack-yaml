@@ -1,0 +1,42 @@
+# Create a new item — name, description, type select, confirmation
+- type: intro
+  text: " Add Item "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Create a new item"
+
+- type: input
+  prompt: "Name"
+  output: "item_name"
+
+- type: input
+  prompt: "Description (optional)"
+  output: "item_description"
+
+- type: select
+  prompt: "Select type"
+  items: "{type_items}"
+  output: "item_type"
+
+- type: print
+  loglevel: info
+  text: "Name: {item_name}"
+
+- type: print
+  loglevel: info
+  text: "Type: {item_type}"
+
+- type: confirm
+  prompt: "Create this item?"
+  output: "confirm_add"
+  default: true
+
+- type: outro
+  text: " Item created! "
+  style:
+    color: black
+    background: green

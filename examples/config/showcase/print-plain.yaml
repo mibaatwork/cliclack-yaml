@@ -1,0 +1,49 @@
+# Showcase: Print step — all loglevel variants
+#
+# loglevel controls the visual style of the print step:
+#   (omitted)       → │  bar continuation, blends into frame
+#   loglevel: none  → ├  remark, connect-left separator
+#   loglevel: info  → ●  info marker (blue)
+#   loglevel: warn  → ▲  warning marker (yellow)
+#   loglevel: error → ■  error marker (red)
+
+- type: intro
+  text: " Print Variants "
+  style:
+    color: black
+    background: cyan
+
+# No loglevel — bar continuation │, blends into the frame
+- type: print
+  text: "This text blends into the frame (no marker)"
+
+# loglevel: none — remark ├, connect-left separator
+- type: print
+  loglevel: none
+  text: "This is a remark with a separator line"
+
+# loglevel: info — ● marker
+- type: print
+  loglevel: info
+  text: "This is an info message"
+
+# loglevel: warning — ▲ marker
+- type: print
+  loglevel: warning
+  text: "This is a warning message"
+
+# loglevel: error — ■ marker
+- type: print
+  loglevel: error
+  text: "This is an error message"
+
+# No loglevel with variable interpolation
+- type: print
+  text: "Hello {user_name}, welcome to the demo!"
+  input: "user_name"
+
+- type: outro
+  text: " Done "
+  style:
+    color: black
+    background: green

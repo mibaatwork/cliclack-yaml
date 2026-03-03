@@ -1,0 +1,36 @@
+# Registration flow — with password confirmation and validation
+- type: intro
+  text: " 📝 Create Account "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Create your new account"
+
+- type: input
+  prompt: "Email address"
+  output: "email"
+
+- type: password
+  prompt: "Create a password"
+  output: "password"
+  confirm_password: true
+  validate:
+    - type: not-empty
+      message: "Password cannot be empty"
+    - type: min-length
+      length: 8
+      message: "Password must be at least 8 characters long"
+
+- type: confirm
+  prompt: "Create account with these details?"
+  output: "confirm_register"
+  default: true
+
+- type: outro
+  text: " Processing registration... "
+  style:
+    color: black
+    background: blue

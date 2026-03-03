@@ -1,0 +1,24 @@
+# Login flow — email + password
+- type: intro
+  text: " 🔐 Login "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Please provide your credentials to log in."
+
+- type: input
+  prompt: "Email address"
+  output: "email"
+
+- type: password
+  prompt: "Password"
+  output: "password"
+
+- type: outro
+  text: " Authenticating... "
+  style:
+    color: black
+    background: blue

@@ -1,0 +1,38 @@
+# Web project setup flow
+- type: intro
+  text: "🌐 Setting up Web Application"
+
+- type: input
+  prompt: "Enter the web app name"
+  output: "app_name"
+  validate:
+    - type: not-empty
+      message: "App name is required"
+
+- type: select
+  prompt: "Choose a web framework"
+  output: "framework"
+  items:
+    - value: "react"
+      label: "React"
+      hint: "Popular JavaScript library"
+    - value: "vue"
+      label: "Vue.js"
+      hint: "Progressive JavaScript framework"
+    - value: "angular"
+      label: "Angular"
+      hint: "TypeScript-based framework"
+
+- type: confirm
+  prompt: "Enable TypeScript?"
+  output: "use_typescript"
+  default: true
+
+- type: print
+  text: "Creating {app_name} with {framework}..."
+  loglevel: "info"
+
+- type: print
+  text: "Web app '{app_name}' created with {framework}!"
+  loglevel: "info"
+  output: "external_step_output"

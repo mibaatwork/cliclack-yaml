@@ -1,0 +1,9 @@
+# Simple YAML that returns a specific output
+- type: input
+  prompt: "Enter a value"
+  output: "user_input"
+
+- type: print
+  text: "Processed: {user_input}"
+  loglevel: "info"
+  output: "external_step_output"

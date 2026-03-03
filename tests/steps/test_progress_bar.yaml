@@ -1,0 +1,14 @@
+# Simple progress bar example
+- type: intro
+  text: "Progress Bar Example"
+
+- type: progress
+  progressType:
+    type: bar
+    total: 100
+  startMessage: "Installing packages..."
+  stopMessage: "Installation complete!"
+  output: "install_status"
+
+- type: outro
+  text: "All done!"

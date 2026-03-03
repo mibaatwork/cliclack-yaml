@@ -1,0 +1,61 @@
+# Showcase: Conditional step execution
+#
+# Steps can be skipped based on the result of a previous step.
+# Use `step_name` to label a step, then reference it in `condition`.
+
+- type: intro
+  text: " Conditional Steps Demo "
+  style:
+    color: black
+    background: cyan
+
+# Ask whether to enable advanced mode
+- type: confirm
+  prompt: "Enable advanced mode?"
+  output: "advanced_enabled"
+  step_name: "advanced_check"
+
+# This input only appears if advanced mode is enabled
+- type: input
+  prompt: "Enter API endpoint"
+  output: "api_endpoint"
+  placeholder: "https://api.example.com"
+  condition:
+    parent: "advanced_check"
+    value: true
+
+# This input only appears if advanced mode is enabled
+- type: input
+  prompt: "Enter API key"
+  output: "api_key"
+  condition:
+    parent: "advanced_check"
+    value: true
+
+# This message shows when advanced mode is skipped
+- type: print
+  loglevel: info
+  text: "Using default settings."
+  condition:
+    parent: "advanced_check"
+    value: false
+
+# Conditional outro — success path
+- type: outro
+  text: " Advanced mode configured "
+  style:
+    color: black
+    background: green
+  condition:
+    parent: "advanced_check"
+    value: true
+
+# Conditional outro — default path
+- type: outro
+  text: " Using defaults — all done! "
+  style:
+    color: black
+    background: blue
+  condition:
+    parent: "advanced_check"
+    value: false

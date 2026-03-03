@@ -1,0 +1,16 @@
+# Display current configuration
+- type: intro
+  text: " Configuration "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "{config_output}"
+
+- type: outro
+  text: " Configuration list complete "
+  style:
+    color: black
+    background: green

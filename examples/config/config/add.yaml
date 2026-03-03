@@ -1,0 +1,29 @@
+# Add a key-value configuration entry
+- type: intro
+  text: " Add Configuration "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Add or update a configuration key-value pair"
+
+- type: input
+  prompt: "Configuration key"
+  output: "key"
+
+- type: input
+  prompt: "Configuration value"
+  output: "value"
+
+- type: confirm
+  prompt: "Save this configuration value?"
+  output: "confirm_add"
+  default: true
+
+- type: outro
+  text: " Configuration saved "
+  style:
+    color: black
+    background: green

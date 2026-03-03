@@ -1,0 +1,38 @@
+# API project setup flow
+- type: intro
+  text: "🔌 Setting up REST API"
+
+- type: input
+  prompt: "Enter the API name"
+  output: "api_name"
+  validate:
+    - type: not-empty
+      message: "API name is required"
+
+- type: select
+  prompt: "Choose an API framework"
+  output: "api_framework"
+  items:
+    - value: "express"
+      label: "Express.js"
+      hint: "Fast Node.js web framework"
+    - value: "fastapi"
+      label: "FastAPI"
+      hint: "Modern Python API framework"
+    - value: "axum"
+      label: "Axum"
+      hint: "Rust web application framework"
+
+- type: confirm
+  prompt: "Include database integration?"
+  output: "include_db"
+  default: true
+
+- type: print
+  text: "Creating API '{api_name}' with {api_framework}..."
+  loglevel: "info"
+
+- type: print
+  text: "API '{api_name}' created with {api_framework}!"
+  loglevel: "info"
+  output: "external_step_output"

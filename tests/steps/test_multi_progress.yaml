@@ -1,0 +1,50 @@
+# Multi-progress example
+- type: intro
+  text: "Multi-Progress Example"
+
+- type: multi-progress
+  title: "Processing multiple tasks..."
+  progressBars:
+    - progressType:
+        type: bar
+        total: 100
+      startMessage: "Installing dependencies..."
+      stopMessage: "Dependencies installed!"
+      items:
+        - increment: 25
+          delayMs: 500
+        - increment: 25
+          delayMs: 500
+        - increment: 25
+          delayMs: 500
+        - increment: 25
+          delayMs: 500
+    
+    - progressType:
+        type: bar
+        total: 200
+        useDownloadTemplate: true
+      startMessage: "Downloading assets..."
+      stopMessage: "Assets downloaded!"
+      items:
+        - message: "Downloading images..."
+          increment: 100
+          delayMs: 1000
+        - message: "Downloading fonts..."
+          increment: 100
+          delayMs: 800
+    
+    - progressType:
+        type: spinner
+      startMessage: "Compiling..."
+      stopMessage: "Compilation complete!"
+      items:
+        - message: "Compiling TypeScript..."
+          delayMs: 1500
+        - message: "Building bundles..."
+          delayMs: 1200
+  
+  output: "build_status"
+
+- type: outro
+  text: "Build completed successfully!"

@@ -1,0 +1,16 @@
+# Logout — display dynamic message via variables
+- type: intro
+  text: " 🚪 Logout "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "{logout_message}"
+
+- type: outro
+  text: " {outro_message} "
+  style:
+    color: black
+    background: green

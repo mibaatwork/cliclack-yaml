@@ -1,0 +1,27 @@
+# Choose a scope before creating an item
+- type: intro
+  text: " Add Item "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Choose where to create the item"
+
+- type: select
+  prompt: "Select scope"
+  items:
+    - value: "local"
+      label: "Local"
+      hint: "Store in current directory"
+    - value: "global"
+      label: "Global"
+      hint: "Store in shared space for team access"
+  output: "scope"
+
+- type: outro
+  text: " Scope selected "
+  style:
+    color: black
+    background: green

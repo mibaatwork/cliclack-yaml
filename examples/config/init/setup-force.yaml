@@ -1,0 +1,28 @@
+# Force re-initialization — overwrite warning
+- type: intro
+  text: " Initialize "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "🚀 Initializing..."
+
+- type: print
+  loglevel: info
+  text: "🔄 Force mode enabled — overwriting existing configuration"
+
+- type: print
+  loglevel: info
+  text: "Configuration directory created at: {config_path}"
+
+- type: print
+  loglevel: info
+  text: "You can now use all commands."
+
+- type: outro
+  text: " ✅ Initialized successfully! "
+  style:
+    color: black
+    background: green

@@ -1,0 +1,36 @@
+# Remove config entries — multi-select with conditional outro
+- type: intro
+  text: " Remove Configuration "
+  style:
+    color: black
+    background: cyan
+
+- type: multiselect
+  prompt: "Select configuration keys to remove"
+  output: "items_to_remove"
+  required: true
+  items: "{config_items}"
+
+- type: confirm
+  prompt: "Are you sure you want to remove the selected item(s)?"
+  output: "confirm_remove"
+  step_name: "confirm_remove"
+  default: false
+
+- type: outro
+  text: " Configuration removed "
+  style:
+    color: black
+    background: green
+  condition:
+    parent: "confirm_remove"
+    value: true
+
+- type: outro
+  text: " Removal cancelled "
+  style:
+    color: black
+    background: yellow
+  condition:
+    parent: "confirm_remove"
+    value: false

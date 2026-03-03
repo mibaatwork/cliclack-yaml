@@ -1,0 +1,18 @@
+# Progress bar with download template
+- type: progress
+  progressType:
+    type: bar
+    total: 1024
+    useDownloadTemplate: true
+  startMessage: "Downloading file..."
+  stopMessage: "Download complete!"
+  items:
+    - message: "Connecting to server..."
+      increment: 100
+      delayMs: 500
+    - message: "Downloading data..."
+      increment: 824
+      delayMs: 1000
+    - message: "Finalizing..."
+      increment: 100
+      delayMs: 200

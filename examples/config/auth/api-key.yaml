@@ -1,0 +1,43 @@
+# API key input with expiration selection
+- type: intro
+  text: " 🔑 API Key Setup "
+  style:
+    color: black
+    background: cyan
+
+- type: print
+  loglevel: info
+  text: "Enter your API key for authentication."
+
+- type: password
+  prompt: "API Key"
+  output: "api_key"
+  mask: "*"
+
+- type: select
+  prompt: "Key expiration"
+  output: "expire_time"
+  items:
+    - value: "1h"
+      label: "1 Hour"
+      hint: "Expires in 1 hour"
+    - value: "8h"
+      label: "8 Hours"
+      hint: "Expires in 8 hours"
+    - value: "1d"
+      label: "1 Day"
+      hint: "Expires in 1 day"
+    - value: "never"
+      label: "Never"
+      hint: "Key never expires"
+
+- type: confirm
+  prompt: "Save this API key?"
+  output: "confirm_save"
+  default: true
+
+- type: outro
+  text: " API Key saved "
+  style:
+    color: black
+    background: green

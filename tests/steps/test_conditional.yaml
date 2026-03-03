@@ -1,0 +1,19 @@
+
+- type: confirm
+  prompt: "Do you want to proceed?"
+  output: "should_proceed"
+  step_name: "proceed_step"
+
+- type: input
+  prompt: "Enter name"
+  output: "name"
+  condition:
+    parent: "proceed_step"
+    value: true
+
+- type: print
+  text: "Hello {name}"
+  loglevel: "info"
+  condition:
+    parent: "proceed_step"
+    value: true

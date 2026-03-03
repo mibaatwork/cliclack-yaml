@@ -1,0 +1,38 @@
+# CLI project setup flow
+- type: intro
+  text: "⚡ Setting up CLI Tool"
+
+- type: input
+  prompt: "Enter the CLI tool name"
+  output: "cli_name"
+  validate:
+    - type: not-empty
+      message: "CLI name is required"
+
+- type: select
+  prompt: "Choose a programming language"
+  output: "language"
+  items:
+    - value: "rust"
+      label: "Rust"
+      hint: "Fast and safe systems programming"
+    - value: "go"
+      label: "Go"
+      hint: "Simple and efficient"
+    - value: "node"
+      label: "Node.js"
+      hint: "JavaScript runtime"
+
+- type: confirm
+  prompt: "Include argument parsing?"
+  output: "include_args"
+  default: true
+
+- type: print
+  text: "Creating CLI tool '{cli_name}' in {language}..."
+  loglevel: "info"
+
+- type: print
+  text: "CLI tool '{cli_name}' created in {language}!"
+  loglevel: "info"
+  output: "external_step_output"
