@@ -1,6 +1,6 @@
 [package]
 name = "cliclack_yaml"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Michael Bauer"]
 description = "A YAML-based configuration layer for cliclack interactive CLI prompts"
@@ -12,7 +12,7 @@ readme = "README.md"
 
 [dependencies]
 anyhow = "1.0.98"
-cliclack = "0.3.9"
+cliclack = "0.4.0"
 console = "0.16.0"
 regex = "1.11.1"
 serde = { version = "1.0.219", features = ["derive"] }

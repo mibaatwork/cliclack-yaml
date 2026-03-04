@@ -17,7 +17,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-cliclack_yaml = "0.1.0"
+cliclack_yaml = "0.1.1"
 ```
 
 ## Quick Start
@@ -395,3 +395,5 @@ MIT
 ## Examples
 
 See the [`examples/config/`](examples/config/) folder for a complete set of white-label YAML configurations covering auth flows, initialization, config management, CRUD operations, installation progress, system checks, and showcases for every feature (conditionals, variables, validation, styling).
+
+For a full working CLI application that integrates `cliclack_yaml` with [clap](https://crates.io/crates/clap), see the **[cliclack-yaml-cli-example](https://github.com/mibaatwork/cliclack-yaml-cli-example)** repository. It demonstrates embedded prompts, configuration management, and how to structure a white-label CLI project using this crate.
